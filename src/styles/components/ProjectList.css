@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  overflow-y: visible;
 }
 
 .project-list__filters {
@@ -70,6 +71,13 @@
     overflow-x: auto;
     padding-bottom: 1rem;
     justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
+    display: flex;
+    flex-wrap: nowrap; /* Allow horizontal scrolling */
+  }
+  
+  .project-list__grid {
+    gap: 1.5rem; /* Slightly smaller gap for better mobile display */
   }
 }
 
@@ -87,9 +95,20 @@
     overflow-x: auto;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+  }
+  
+  .project-list__filters::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
   }
   
   .project-list__filter-btn {
     white-space: nowrap;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+  }
+
+  .project-list {
+    padding: 0 0.75rem; /* Slightly smaller padding for small screens */
   }
 }
