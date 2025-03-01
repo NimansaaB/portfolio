@@ -1,0 +1,170 @@
+/* Animations for the application */
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn var(--transition-normal) ease-in;
+  }
+  
+  /* Slide up animation */
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-up {
+    animation: slideUp var(--transition-normal) ease-out;
+  }
+  
+  /* Slide in from right */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-right {
+    animation: slideInRight var(--transition-normal) ease-out;
+  }
+  
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft var(--transition-normal) ease-out;
+  }
+  
+  /* Scale up animation */
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .scale-up {
+    animation: scaleUp var(--transition-normal) ease-out;
+  }
+  
+  /* Neon pulse animation */
+  @keyframes neonPulse {
+    0% {
+      box-shadow: var(--neon-primary);
+    }
+    50% {
+      box-shadow: var(--neon-primary-intense);
+    }
+    100% {
+      box-shadow: var(--neon-primary);
+    }
+  }
+  
+  .neon-pulse {
+    animation: neonPulse 2s infinite;
+  }
+  
+  /* Neon text glow animation */
+  @keyframes neonTextPulse {
+    0% {
+      text-shadow: var(--neon-primary);
+    }
+    50% {
+      text-shadow: var(--neon-primary-intense);
+    }
+    100% {
+      text-shadow: var(--neon-primary);
+    }
+  }
+  
+  .neon-text-pulse {
+    animation: neonTextPulse 2s infinite;
+  }
+  
+  /* Spin animation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  /* Typing animation for text */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--color-primary);
+    animation: 
+      typing 3.5s steps(40, end),
+      blink 0.75s step-end infinite;
+  }

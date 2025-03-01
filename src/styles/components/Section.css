@@ -1,0 +1,117 @@
+.section {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+  
+  .section--default {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  
+  .section--dark {
+    background-color: var(--color-gray-900);
+    color: white;
+  }
+  
+  .section--dark .section__title,
+  .section--dark .section__subtitle {
+    color: white;
+  }
+  
+  .section--light {
+    background-color: var(--color-gray-100);
+    color: var(--color-text);
+  }
+  
+  .section--primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .section--primary .section__title,
+  .section--primary .section__subtitle {
+    color: white;
+  }
+  
+  .section--full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section--centered {
+    text-align: center;
+  }
+  
+  .section__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .section__header {
+    margin-bottom: 3rem;
+  }
+  
+  .section__title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    box-shadow: var(--neon-primary);
+  }
+  
+  .section--centered .section__title::after {
+    left: calc(50% - 30px);
+  }
+  
+  .section__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-gray-600);
+    max-width: 600px;
+  }
+  
+  .section--centered .section__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section__content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: var(--section-padding-mobile);
+    }
+    
+    .section__container {
+      padding: 0 1rem;
+    }
+    
+    .section__title {
+      font-size: 2rem;
+    }
+    
+    .section__subtitle {
+      font-size: 1rem;
+    }
+    
+    .section__header {
+      margin-bottom: 2rem;
+    }
+  }

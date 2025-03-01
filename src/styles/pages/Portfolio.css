@@ -1,0 +1,20 @@
+.portfolio-page {
+  width: 100%;
+}
+
+.portfolio-section {
+  padding-top: 6rem; /* Increased top padding to fix navbar overlap */
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-section {
+    padding-top: 4.5rem;
+  }
+}
