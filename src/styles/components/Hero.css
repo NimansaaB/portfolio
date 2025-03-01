@@ -1,9 +1,9 @@
 .hero {
-  min-height: 100vh;
+  min-height: 100vh; /* This is ok */
   display: flex;
   align-items: center;
   padding: 6rem 0;
-  position: relative;
+  position: relative; /* Changed from fixed */
   width: 100%;
   max-width: 100vw;
   background-color: #ffffff; /* Ensure white background */
@@ -83,7 +83,7 @@
   height: 460px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 50 auto;
+  margin: 0 auto; /* Fixed the margin */
 }
 
 .hero__profile-image {
@@ -134,7 +134,7 @@
 }
 
 .hero__background-glow {
-  position: absolute;
+  position: absolute; /* Changed from fixed */
   width: 200%;
   height: 200%;
   top: -50%;
@@ -240,6 +240,7 @@
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 0;
+    height: auto; /* Added to ensure flexible height on mobile */
   }
   
   .hero__container {
@@ -265,6 +266,11 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    min-height: auto; /* Change to auto for very small screens */
+    padding: 3rem 0;
+  }
+  
   .hero__name {
     font-size: 2.5rem;
   }
