@@ -7,7 +7,7 @@ export const projects = [
     description: "A group project utilizing machine learning to analyze images of road issues like potholes and broken streetlights. Developing with Flutter for mobile and Spring Boot for the backend, ensuring seamless issue reporting and validation.",
     technologies: ["Flutter", "Spring Boot", "Machine Learning"],
     period: "Sep 2024 - Present",
-    image: "public/assets/images/projects/infratrack.png",
+    image: "/assets/images/projects/infratrack.png",
     featured: true,
     demoLink: null,
     repoLink: null,
