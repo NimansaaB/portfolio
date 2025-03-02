@@ -9,6 +9,9 @@ import algorithmWorkshop from '../../assets/images/workshops/algorithm-workshop.
 import careerNavigator from '../../assets/images/workshops/career-navigator.jpeg';
 import ieeeXtreme from '../../assets/images/workshops/ieee-xtreme.jpeg';
 
+
+// In your data.js or utilities file
+
 const Workshops = () => {
   const workshopsData = [
     {

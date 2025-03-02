@@ -1,5 +1,15 @@
 // Use relative paths from the public folder for Vite
 // Use string paths that reference the public folder
+
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/portfolio' : '';
+
+export const getImagePath = (path) => {
+  // Remove any leading slashes
+  const cleanPath = path.replace(/^\//, '');
+  return `${basePath}/${cleanPath}`;
+};
+
 export const projects = [
   {
     id: 1,
@@ -7,7 +17,7 @@ export const projects = [
     description: "A group project utilizing machine learning to analyze images of road issues like potholes and broken streetlights. Developing with Flutter for mobile and Spring Boot for the backend, ensuring seamless issue reporting and validation.",
     technologies: ["Flutter", "Spring Boot", "Machine Learning"],
     period: "Sep 2024 - Present",
-    image: "/assets/images/projects/infratrack.png",
+    image: getImagePath('assets/images/projects/infratrack.png'),
     featured: true,
     demoLink: null,
     repoLink: null,
