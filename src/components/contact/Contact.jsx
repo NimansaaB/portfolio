@@ -68,24 +68,34 @@ const Contact = () => {
     setSubmitError('');
     
     try {
-      // In a real application, you would send the form data to your backend
-      // For now, we'll simulate a successful submission after a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      // Send form data to Formspree
+      const response = await fetch("https://formspree.io/f/YOUR_FORMSPREE_FORM_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
       
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       setSubmitError('There was an error sending your message. Please try again later.');
+      console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -102,7 +112,6 @@ const Contact = () => {
           
           <div className="contact__details">
             <div className="contact__detail">
-
               <div className="contact__detail-content">
                 <h3 className="contact__detail-title">Email</h3>
                 <a href="mailto:nimansab22@gmail.com" className="contact__detail-value">
@@ -112,7 +121,6 @@ const Contact = () => {
             </div>
             
             <div className="contact__detail">
-
               <div className="contact__detail-content">
                 <h3 className="contact__detail-title">Location</h3>
                 <p className="contact__detail-value">
@@ -122,7 +130,6 @@ const Contact = () => {
             </div>
             
             <div className="contact__detail">
-
               <div className="contact__detail-content">
                 <h3 className="contact__detail-title">Phone</h3>
                 <a href="tel:+94701681878" className="contact__detail-value">

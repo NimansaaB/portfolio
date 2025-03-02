@@ -1,26 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../shared/Button';
 import '../../styles/components/ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
-  const { 
-    id, 
-    title, 
-    description, 
-    technologies, 
-    period
+  const {
+    id,
+    title,
+    description,
+    technologies,
+    period,
+    image
   } = project;
-
+  
+  const [imageError, setImageError] = useState(!image);
+  
   // Get first letter for placeholder
   const firstLetter = title ? title.charAt(0) : 'P';
+  
+  // Handle image error function
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <div className="project-card">
       {/* Image container with fixed height */}
       <div className="project-card__image-container">
-        <div className="project-card__image-placeholder">
-          <span className="project-card__image-text">{firstLetter}</span>
-        </div>
+        {imageError ? (
+          <div className="project-card__image-placeholder">
+            <span className="project-card__image-text">{firstLetter}</span>
+          </div>
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="project-card__image"
+            onError={handleImageError}
+          />
+        )}
       </div>
       
       {/* Content area with fixed structure */}
@@ -48,9 +65,9 @@ const ProjectCard = ({ project }) => {
         
         {/* View Demo button consistently positioned */}
         <div className="project-card__button-container">
-          <Button 
+          <Button
             to={`/project/${id}`}
-            variant="primary" 
+            variant="primary"
             size="small"
             className="project-card__button"
           >
