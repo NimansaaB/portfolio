@@ -6,6 +6,7 @@ import TechnicalSkills from '../components/home/TechnicalSkills';
 import Awards from '../components/home/Awards';
 import Workshops from '../components/home/Workshops';
 import '../styles/pages/Home.css';
+import Volunteer from '../components/home/Volunteer';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <TechnicalSkills />
       <Awards />
       <Workshops />
+      <Volunteer />
     </div>
   );
 };
